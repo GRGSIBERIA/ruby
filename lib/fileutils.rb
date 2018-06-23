@@ -526,7 +526,7 @@ module FileUtils
           end
         end
         begin
-          File.rename s, d
+          File.rename s, d rescue nil
         rescue Errno::EXDEV
           copy_entry s, d, true
           if secure
